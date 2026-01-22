@@ -1,0 +1,81 @@
+# Dependencias
+node_modules/
+
+# Producción
+build/
+dist/
+.docusaurus/
+
+# Archivos generados
+*.log
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage
+coverage/
+
+# Editor
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+*.so
+.eggs/
+*.egg-info/
+*.egg
+
+# Entornos virtuales
+venv/
+ENV/
+env/
+
+# Archivos temporales de LaTeX
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+*.ptc
+*.bbl
+*.blg
+*.bcf
+
+# Archivos temporales del script de PDF
+combined_apuntes.md
+metadata.yaml
+
+# Variables de entorno
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Yarn
+yarn-debug.log*
+yarn-error.log*
+
+# npm
+npm-debug.log*
+.npm
+
+# Lock files (mantener package-lock.json)
+yarn.lock

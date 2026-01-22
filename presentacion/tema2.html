@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 2: Sistemas de Numeración</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/reset.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/theme/white.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/plugin/highlight/monokai.css">
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <!-- Portada -->
+            <section data-background-color="#1e3a8a">
+                <h1 style="color: white;">Electrónica Digital</h1>
+                <h2 style="color: #93c5fd;">Tema 2: Sistemas de Numeración</h2>
+                <p style="color: #dbeafe;">Tecnología 4º ESO</p>
+            </section>
+
+            <!-- Objetivos -->
+            <section>
+                <h2>🎯 Objetivos</h2>
+                <ul>
+                    <li class="fragment">Comprender el sistema binario</li>
+                    <li class="fragment">Comprender el sistema hexadecimal</li>
+                    <li class="fragment">Realizar conversiones entre bases</li>
+                    <li class="fragment">Operaciones aritméticas en binario</li>
+                </ul>
+            </section>
+
+            <!-- ¿Por qué? -->
+            <section>
+                <h2>¿Por qué diferentes sistemas?</h2>
+                <p class="fragment">Los circuitos digitales tienen <strong>2 estados</strong></p>
+                <p class="fragment">→ El sistema <strong>binario</strong> es su lenguaje natural</p>
+                <p class="fragment">→ El <strong>hexadecimal</strong> es un atajo compacto</p>
+            </section>
+
+            <!-- Sistema Binario -->
+            <section>
+                <section>
+                    <h2>Sistema Binario (Base 2)</h2>
+                    <p>Solo 2 símbolos: <strong>0</strong> y <strong>1</strong></p>
+                </section>
+                <section>
+                    <h3>Valor Posicional</h3>
+                    <table style="font-size: 0.8em;">
+                        <tr><th>Posición</th><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td></tr>
+                        <tr><th>Potencia</th><td>2⁷</td><td>2⁶</td><td>2⁵</td><td>2⁴</td><td>2³</td><td>2²</td><td>2¹</td><td>2⁰</td></tr>
+                        <tr><th>Valor</th><td>128</td><td>64</td><td>32</td><td>16</td><td>8</td><td>4</td><td>2</td><td>1</td></tr>
+                    </table>
+                </section>
+                <section>
+                    <h3>Ejemplo: Binario → Decimal</h3>
+                    <p>\(10110101_2\)</p>
+                    <p class="fragment">\(= 128 + 32 + 16 + 4 + 1\)</p>
+                    <p class="fragment">\(= 181_{10}\)</p>
+                </section>
+                <section>
+                    <h3>Decimal → Binario</h3>
+                    <p>Divisiones sucesivas entre 2</p>
+                    <pre class="fragment"><code>25 ÷ 2 = 12  resto 1  ↑
+12 ÷ 2 = 6   resto 0  │
+6  ÷ 2 = 3   resto 0  │
+3  ÷ 2 = 1   resto 1  │
+1  ÷ 2 = 0   resto 1  ↓
+
+25₁₀ = 11001₂</code></pre>
+                </section>
+            </section>
+
+            <!-- Sistema Hexadecimal -->
+            <section>
+                <section>
+                    <h2>Sistema Hexadecimal (Base 16)</h2>
+                    <p>16 símbolos: 0-9 y A-F</p>
+                </section>
+                <section>
+                    <h3>Tabla de Conversión</h3>
+                    <table style="font-size: 0.7em;">
+                        <tr><th>Bin</th><th>Hex</th><th>Dec</th><th></th><th>Bin</th><th>Hex</th><th>Dec</th></tr>
+                        <tr><td>0000</td><td>0</td><td>0</td><td></td><td>1000</td><td>8</td><td>8</td></tr>
+                        <tr><td>0001</td><td>1</td><td>1</td><td></td><td>1001</td><td>9</td><td>9</td></tr>
+                        <tr><td>0010</td><td>2</td><td>2</td><td></td><td>1010</td><td>A</td><td>10</td></tr>
+                        <tr><td>0011</td><td>3</td><td>3</td><td></td><td>1011</td><td>B</td><td>11</td></tr>
+                        <tr><td>0100</td><td>4</td><td>4</td><td></td><td>1100</td><td>C</td><td>12</td></tr>
+                        <tr><td>0101</td><td>5</td><td>5</td><td></td><td>1101</td><td>D</td><td>13</td></tr>
+                        <tr><td>0110</td><td>6</td><td>6</td><td></td><td>1110</td><td>E</td><td>14</td></tr>
+                        <tr><td>0111</td><td>7</td><td>7</td><td></td><td>1111</td><td>F</td><td>15</td></tr>
+                    </table>
+                </section>
+                <section>
+                    <h3>💡 Truco: 4 bits = 1 hex</h3>
+                    <pre><code>Binario:   1101 0110
+                D    6
+Hex:         D6</code></pre>
+                </section>
+            </section>
+
+            <!-- Suma binaria -->
+            <section>
+                <section>
+                    <h2>Suma Binaria</h2>
+                    <p>Reglas:</p>
+                    <ul>
+                        <li>0 + 0 = 0</li>
+                        <li>0 + 1 = 1</li>
+                        <li>1 + 0 = 1</li>
+                        <li>1 + 1 = <strong>10</strong> (0 y llevo 1)</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Ejemplo</h3>
+                    <pre><code>    1011₂  (11₁₀)
+  +  110₂  ( 6₁₀)
+  -------
+   10001₂  (17₁₀)</code></pre>
+                </section>
+            </section>
+
+            <!-- Aplicaciones -->
+            <section>
+                <h2>Aplicaciones Prácticas</h2>
+                <ul>
+                    <li class="fragment"><strong>Direcciones de memoria:</strong> 0x08FF</li>
+                    <li class="fragment"><strong>Colores RGB:</strong> #FF6600 🟠</li>
+                    <li class="fragment"><strong>Puertos E/S:</strong> 10110010₂ = B2₁₆</li>
+                </ul>
+            </section>
+
+            <!-- Resumen -->
+            <section data-background-color="#1e3a8a">
+                <h2 style="color: white;">Resumen</h2>
+                <ul style="color: #dbeafe;">
+                    <li>Binario: Base 2 (0, 1)</li>
+                    <li>Hexadecimal: Base 16 (0-F)</li>
+                    <li>4 bits = 1 dígito hexadecimal</li>
+                    <li>División sucesiva para convertir</li>
+                </ul>
+            </section>
+
+            <!-- Siguiente tema -->
+            <section>
+                <h2>Próximo tema</h2>
+                <h3>Tema 3: Álgebra de Boole</h3>
+                <p>AND, OR, NOT y leyes fundamentales</p>
+            </section>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/plugin/notes/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/plugin/markdown/markdown.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/plugin/highlight/highlight.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/plugin/math/math.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            slideNumber: 'c/t',
+            plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ],
+            transition: 'slide',
+            backgroundTransition: 'fade'
+        });
+    </script>
+</body>
+</html>

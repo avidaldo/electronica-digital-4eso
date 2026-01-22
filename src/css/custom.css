@@ -1,0 +1,163 @@
+/**
+ * Custom CSS for Electrónica Digital 4º ESO
+ */
+
+/* Variables de color personalizadas */
+:root {
+  --ifm-color-primary: #2563eb;
+  --ifm-color-primary-dark: #1d4ed8;
+  --ifm-color-primary-darker: #1e40af;
+  --ifm-color-primary-darkest: #1e3a8a;
+  --ifm-color-primary-light: #3b82f6;
+  --ifm-color-primary-lighter: #60a5fa;
+  --ifm-color-primary-lightest: #93c5fd;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+/* Modo oscuro */
+[data-theme='dark'] {
+  --ifm-color-primary: #60a5fa;
+  --ifm-color-primary-dark: #3b82f6;
+  --ifm-color-primary-darker: #2563eb;
+  --ifm-color-primary-darkest: #1d4ed8;
+  --ifm-color-primary-light: #93c5fd;
+  --ifm-color-primary-lighter: #bfdbfe;
+  --ifm-color-primary-lightest: #dbeafe;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+/* Tablas con mejor estilo */
+table {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+}
+
+th, td {
+  border: 1px solid var(--ifm-color-emphasis-300);
+  padding: 0.75rem;
+  text-align: center;
+}
+
+th {
+  background-color: var(--ifm-color-primary-lightest);
+  font-weight: 600;
+}
+
+[data-theme='dark'] th {
+  background-color: var(--ifm-color-primary-darkest);
+}
+
+/* Tablas de verdad con estilo especial */
+table:has(th:first-child:contains("A")) th,
+table:has(th:first-child:contains("$A$")) th {
+  background-color: #fef3c7;
+}
+
+[data-theme='dark'] table:has(th:first-child:contains("A")) th {
+  background-color: #78350f;
+}
+
+/* Bloques de código ASCII (circuitos) */
+pre code {
+  font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* Fórmulas matemáticas con margen */
+.katex-display {
+  margin: 1.5rem 0;
+  padding: 0.5rem;
+  background-color: var(--ifm-color-emphasis-100);
+  border-radius: 8px;
+}
+
+/* Admonitions personalizados */
+.alert--info {
+  --ifm-alert-background-color: #dbeafe;
+  --ifm-alert-border-color: #3b82f6;
+}
+
+[data-theme='dark'] .alert--info {
+  --ifm-alert-background-color: #1e3a8a;
+}
+
+/* Sección de objetivos de aprendizaje */
+h2:has(+ ul > li:contains("serás capaz de")) {
+  background: linear-gradient(90deg, var(--ifm-color-primary-lightest), transparent);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+}
+
+/* Navegación del sidebar */
+.menu__link {
+  font-size: 0.95rem;
+}
+
+.menu__list-item-collapsible .menu__link--active {
+  font-weight: 600;
+}
+
+/* Footer */
+.footer {
+  background-color: #1e293b;
+}
+
+.footer__title {
+  color: #f1f5f9;
+}
+
+/* Responsividad para móviles */
+@media (max-width: 768px) {
+  table {
+    font-size: 0.85rem;
+  }
+  
+  th, td {
+    padding: 0.5rem;
+  }
+  
+  .katex {
+    font-size: 0.9rem;
+  }
+}
+
+/* Scroll suave */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Animación para enlaces internos */
+:target {
+  animation: highlight 2s ease;
+}
+
+@keyframes highlight {
+  0% {
+    background-color: #fef08a;
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+/* Impresión */
+@media print {
+  .navbar,
+  .footer,
+  .pagination-nav,
+  .theme-doc-sidebar-container {
+    display: none !important;
+  }
+  
+  .main-wrapper {
+    padding: 0 !important;
+  }
+  
+  table {
+    page-break-inside: avoid;
+  }
+}

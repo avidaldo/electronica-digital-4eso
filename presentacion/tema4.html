@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 4: Puertas Lógicas</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/reset.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/theme/white.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/plugin/highlight/monokai.css">
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <!-- Portada -->
+            <section data-background-color="#1e3a8a">
+                <h1 style="color: white;">Electrónica Digital</h1>
+                <h2 style="color: #93c5fd;">Tema 4: Puertas Lógicas</h2>
+                <p style="color: #dbeafe;">Tecnología 4º ESO</p>
+            </section>
+
+            <!-- Objetivos -->
+            <section>
+                <h2>🎯 Objetivos</h2>
+                <ul>
+                    <li class="fragment">Identificar símbolos de puertas lógicas</li>
+                    <li class="fragment">Construir tablas de verdad</li>
+                    <li class="fragment">Conocer las puertas universales</li>
+                    <li class="fragment">Diseñar circuitos simples</li>
+                </ul>
+            </section>
+
+            <!-- ¿Qué es? -->
+            <section>
+                <h2>¿Qué es una Puerta Lógica?</h2>
+                <p>Circuito electrónico que implementa una <strong>operación booleana</strong></p>
+                <ul class="fragment">
+                    <li>Entradas: 0 ó 1 (niveles de tensión)</li>
+                    <li>Salida: Resultado de la operación</li>
+                    <li>Velocidad: Nanosegundos (10⁻⁹ s)</li>
+                </ul>
+            </section>
+
+            <!-- NOT -->
+            <section>
+                <h2>Puerta NOT (Inversor)</h2>
+                <p>\(F = \overline{A}\)</p>
+                <table>
+                    <tr><th>A</th><th>F</th></tr>
+                    <tr><td>0</td><td style="background: #dcfce7;">1</td></tr>
+                    <tr><td>1</td><td style="background: #fee2e2;">0</td></tr>
+                </table>
+                <p class="fragment">La única puerta con <strong>1 entrada</strong></p>
+            </section>
+
+            <!-- AND -->
+            <section>
+                <h2>Puerta AND</h2>
+                <p>\(F = A \cdot B\)</p>
+                <table>
+                    <tr><th>A</th><th>B</th><th>F</th></tr>
+                    <tr><td>0</td><td>0</td><td>0</td></tr>
+                    <tr><td>0</td><td>1</td><td>0</td></tr>
+                    <tr><td>1</td><td>0</td><td>0</td></tr>
+                    <tr><td>1</td><td>1</td><td style="background: #dcfce7;">1</td></tr>
+                </table>
+                <p class="fragment">💡 "Salida = 1 solo si <strong>TODAS</strong> las entradas = 1"</p>
+            </section>
+
+            <!-- OR -->
+            <section>
+                <h2>Puerta OR</h2>
+                <p>\(F = A + B\)</p>
+                <table>
+                    <tr><th>A</th><th>B</th><th>F</th></tr>
+                    <tr><td>0</td><td>0</td><td>0</td></tr>
+                    <tr><td>0</td><td>1</td><td style="background: #dcfce7;">1</td></tr>
+                    <tr><td>1</td><td>0</td><td style="background: #dcfce7;">1</td></tr>
+                    <tr><td>1</td><td>1</td><td style="background: #dcfce7;">1</td></tr>
+                </table>
+                <p class="fragment">💡 "Salida = 1 si <strong>AL MENOS UNA</strong> entrada = 1"</p>
+            </section>
+
+            <!-- NAND -->
+            <section>
+                <section>
+                    <h2>Puertas Universales</h2>
+                    <p>Con ellas puedes construir <strong>cualquier</strong> otra puerta</p>
+                </section>
+                <section>
+                    <h3>Puerta NAND</h3>
+                    <p>\(F = \overline{A \cdot B}\) (AND negada)</p>
+                    <table>
+                        <tr><th>A</th><th>B</th><th>F</th></tr>
+                        <tr><td>0</td><td>0</td><td style="background: #dcfce7;">1</td></tr>
+                        <tr><td>0</td><td>1</td><td style="background: #dcfce7;">1</td></tr>
+                        <tr><td>1</td><td>0</td><td style="background: #dcfce7;">1</td></tr>
+                        <tr><td>1</td><td>1</td><td>0</td></tr>
+                    </table>
+                </section>
+                <section>
+                    <h3>Puerta NOR</h3>
+                    <p>\(F = \overline{A + B}\) (OR negada)</p>
+                    <table>
+                        <tr><th>A</th><th>B</th><th>F</th></tr>
+                        <tr><td>0</td><td>0</td><td style="background: #dcfce7;">1</td></tr>
+                        <tr><td>0</td><td>1</td><td>0</td></tr>
+                        <tr><td>1</td><td>0</td><td>0</td></tr>
+                        <tr><td>1</td><td>1</td><td>0</td></tr>
+                    </table>
+                </section>
+            </section>
+
+            <!-- XOR -->
+            <section>
+                <h2>Puerta XOR (O-Exclusiva)</h2>
+                <p>\(F = A \oplus B\)</p>
+                <table>
+                    <tr><th>A</th><th>B</th><th>F</th></tr>
+                    <tr><td>0</td><td>0</td><td>0</td></tr>
+                    <tr><td>0</td><td>1</td><td style="background: #dcfce7;">1</td></tr>
+                    <tr><td>1</td><td>0</td><td style="background: #dcfce7;">1</td></tr>
+                    <tr><td>1</td><td>1</td><td>0</td></tr>
+                </table>
+                <p class="fragment">💡 "Salida = 1 si las entradas son <strong>DIFERENTES</strong>"</p>
+            </section>
+
+            <!-- Resumen todas -->
+            <section>
+                <h2>Resumen de Puertas</h2>
+                <table style="font-size: 0.7em;">
+                    <tr><th>Puerta</th><th>Función</th><th>Salida = 1 cuando...</th></tr>
+                    <tr><td>NOT</td><td>\(\overline{A}\)</td><td>A = 0</td></tr>
+                    <tr><td>AND</td><td>\(A \cdot B\)</td><td>Todas = 1</td></tr>
+                    <tr><td>OR</td><td>\(A + B\)</td><td>Al menos una = 1</td></tr>
+                    <tr><td>NAND</td><td>\(\overline{A \cdot B}\)</td><td>Al menos una = 0</td></tr>
+                    <tr><td>NOR</td><td>\(\overline{A + B}\)</td><td>Todas = 0</td></tr>
+                    <tr><td>XOR</td><td>\(A \oplus B\)</td><td>Son diferentes</td></tr>
+                </table>
+            </section>
+
+            <!-- CIs -->
+            <section>
+                <section>
+                    <h2>Circuitos Integrados</h2>
+                    <p>Las puertas vienen en chips (CIs)</p>
+                </section>
+                <section>
+                    <h3>Ejemplo: 74LS08</h3>
+                    <pre><code>    74LS08 (4 puertas AND)
+    ┌──┐─┐
+1A  │1 └┐│  14 VCC (+5V)
+1B  │2  ││  13 4B
+1Y  │3  ││  12 4A
+2A  │4  ││  11 4Y
+2B  │5  ││  10 3B
+2Y  │6  ││  9  3A
+GND │7  ││  8  3Y
+    └────┘</code></pre>
+                </section>
+                <section>
+                    <h3>⚠️ Importante</h3>
+                    <ul>
+                        <li>Pin 14 = VCC (+5V)</li>
+                        <li>Pin 7 = GND (0V)</li>
+                        <li>¡Siempre alimentar antes de usar!</li>
+                    </ul>
+                </section>
+            </section>
+
+            <!-- Resumen -->
+            <section data-background-color="#1e3a8a">
+                <h2 style="color: white;">Resumen</h2>
+                <ul style="color: #dbeafe;">
+                    <li>Puertas básicas: AND, OR, NOT</li>
+                    <li>Puertas universales: NAND, NOR</li>
+                    <li>XOR: Detecta diferencias</li>
+                    <li>CIs comerciales: Serie 74xx</li>
+                </ul>
+            </section>
+
+            <!-- Siguiente tema -->
+            <section>
+                <h2>Próximo tema</h2>
+                <h3>Tema 5: Diseño de Circuitos</h3>
+                <p>De la tabla de verdad al circuito real</p>
+            </section>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/plugin/notes/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/plugin/markdown/markdown.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/plugin/highlight/highlight.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/plugin/math/math.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            slideNumber: 'c/t',
+            plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ],
+            transition: 'slide',
+            backgroundTransition: 'fade'
+        });
+    </script>
+</body>
+</html>

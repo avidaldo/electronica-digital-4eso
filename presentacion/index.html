@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentaciones - Electrónica Digital 4º ESO</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+        }
+        h1 {
+            color: white;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+        .subtitle {
+            color: #93c5fd;
+            margin-bottom: 40px;
+            font-size: 1.2em;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            width: 100%;
+        }
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            text-decoration: none;
+            color: #1e293b;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+        .card h2 {
+            font-size: 1.3em;
+            margin-bottom: 10px;
+            color: #1e3a8a;
+        }
+        .card p {
+            color: #64748b;
+            font-size: 0.95em;
+            line-height: 1.5;
+        }
+        .card .number {
+            display: inline-block;
+            background: #dbeafe;
+            color: #1e3a8a;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .instructions {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 25px;
+            margin-top: 40px;
+            max-width: 600px;
+            color: white;
+        }
+        .instructions h3 {
+            margin-bottom: 15px;
+        }
+        .instructions ul {
+            list-style: none;
+            padding: 0;
+        }
+        .instructions li {
+            padding: 8px 0;
+        }
+        .instructions kbd {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <h1>📚 Electrónica Digital</h1>
+    <p class="subtitle">Presentaciones - Tecnología 4º ESO</p>
+    
+    <div class="grid">
+        <a href="tema1.html" class="card">
+            <div class="number">1</div>
+            <h2>Introducción</h2>
+            <p>Historia, señales analógicas vs digitales, aplicaciones cotidianas y sostenibilidad.</p>
+        </a>
+        
+        <a href="tema2.html" class="card">
+            <div class="number">2</div>
+            <h2>Sistemas de Numeración</h2>
+            <p>Sistema binario, hexadecimal, conversiones entre bases y operaciones aritméticas.</p>
+        </a>
+        
+        <a href="tema3.html" class="card">
+            <div class="number">3</div>
+            <h2>Álgebra de Boole</h2>
+            <p>Operaciones AND, OR, NOT, leyes fundamentales y teoremas de De Morgan.</p>
+        </a>
+        
+        <a href="tema4.html" class="card">
+            <div class="number">4</div>
+            <h2>Puertas Lógicas</h2>
+            <p>Puertas básicas, universales (NAND, NOR), XOR y circuitos integrados comerciales.</p>
+        </a>
+        
+        <a href="tema5.html" class="card">
+            <div class="number">5</div>
+            <h2>Diseño de Circuitos</h2>
+            <p>Tablas de verdad, expresiones booleanas, Mapas de Karnaugh y simplificación.</p>
+        </a>
+        
+        <a href="tema6.html" class="card">
+            <div class="number">6</div>
+            <h2>Circuitos Combinacionales</h2>
+            <p>Codificadores, decodificadores, display 7 segmentos y multiplexores.</p>
+        </a>
+        
+        <a href="tema7.html" class="card">
+            <div class="number">7</div>
+            <h2>Prácticas de Taller</h2>
+            <p>Uso de protoboard, CIs digitales, simuladores y diagnóstico de fallos.</p>
+        </a>
+    </div>
+    
+    <div class="instructions">
+        <h3>⌨️ Navegación</h3>
+        <ul>
+            <li><kbd>→</kbd> <kbd>←</kbd> Siguiente / Anterior</li>
+            <li><kbd>Espacio</kbd> Avanzar</li>
+            <li><kbd>Esc</kbd> Vista general</li>
+            <li><kbd>F</kbd> Pantalla completa</li>
+            <li><kbd>S</kbd> Notas del presentador</li>
+        </ul>
+    </div>
+</body>
+</html>

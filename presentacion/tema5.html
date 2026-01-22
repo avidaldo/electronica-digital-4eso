@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 5: Análisis y Diseño de Circuitos</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/reset.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/theme/white.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/plugin/highlight/monokai.css">
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <!-- Portada -->
+            <section data-background-color="#1e3a8a">
+                <h1 style="color: white;">Electrónica Digital</h1>
+                <h2 style="color: #93c5fd;">Tema 5: Diseño de Circuitos</h2>
+                <p style="color: #dbeafe;">Tecnología 4º ESO</p>
+            </section>
+
+            <!-- Objetivos -->
+            <section>
+                <h2>🎯 Objetivos</h2>
+                <ul>
+                    <li class="fragment">Obtener tablas de verdad de problemas</li>
+                    <li class="fragment">Escribir expresiones booleanas</li>
+                    <li class="fragment">Simplificar con Karnaugh</li>
+                    <li class="fragment">Implementar circuitos con puertas</li>
+                </ul>
+            </section>
+
+            <!-- Proceso de diseño -->
+            <section>
+                <h2>Proceso de Diseño</h2>
+                <div style="display: flex; flex-direction: column; gap: 10px; align-items: center;">
+                    <div class="fragment" style="background: #dbeafe; padding: 15px 30px; border-radius: 10px;">1. Problema Verbal</div>
+                    <div class="fragment">↓</div>
+                    <div class="fragment" style="background: #dbeafe; padding: 15px 30px; border-radius: 10px;">2. Tabla de Verdad</div>
+                    <div class="fragment">↓</div>
+                    <div class="fragment" style="background: #dbeafe; padding: 15px 30px; border-radius: 10px;">3. Expresión Booleana</div>
+                    <div class="fragment">↓</div>
+                    <div class="fragment" style="background: #fef3c7; padding: 15px 30px; border-radius: 10px;">4. Simplificación</div>
+                    <div class="fragment">↓</div>
+                    <div class="fragment" style="background: #dcfce7; padding: 15px 30px; border-radius: 10px;">5. Circuito con Puertas</div>
+                </div>
+            </section>
+
+            <!-- Ejemplo: Voto -->
+            <section>
+                <section>
+                    <h2>Ejemplo: Sistema de Voto</h2>
+                    <p>3 personas votan (A, B, C)</p>
+                    <p class="fragment">La propuesta se aprueba si <strong>al menos 2 votan SÍ</strong></p>
+                </section>
+                <section>
+                    <h3>Tabla de Verdad</h3>
+                    <table style="font-size: 0.8em;">
+                        <tr><th>A</th><th>B</th><th>C</th><th>Votos</th><th>F</th></tr>
+                        <tr><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                        <tr><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+                        <tr><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+                        <tr><td>0</td><td>1</td><td>1</td><td>2</td><td style="background: #dcfce7;">1</td></tr>
+                        <tr><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+                        <tr><td>1</td><td>0</td><td>1</td><td>2</td><td style="background: #dcfce7;">1</td></tr>
+                        <tr><td>1</td><td>1</td><td>0</td><td>2</td><td style="background: #dcfce7;">1</td></tr>
+                        <tr><td>1</td><td>1</td><td>1</td><td>3</td><td style="background: #dcfce7;">1</td></tr>
+                    </table>
+                </section>
+                <section>
+                    <h3>Expresión Sin Simplificar</h3>
+                    <p>Suma de minitérminos (SOP):</p>
+                    <p>\[F = \overline{A}BC + A\overline{B}C + AB\overline{C} + ABC\]</p>
+                    <p class="fragment">Usa <strong>4 puertas AND + 1 OR</strong> (muchas)</p>
+                </section>
+            </section>
+
+            <!-- Karnaugh -->
+            <section>
+                <section>
+                    <h2>Mapas de Karnaugh</h2>
+                    <p>Método <strong>visual</strong> para simplificar funciones</p>
+                </section>
+                <section>
+                    <h3>Mapa para 3 Variables</h3>
+                    <pre><code>         BC
+       00  01  11  10
+     ┌────────────────┐
+   0 │ 0 │ 1 │ 3 │ 2 │
+A    ├────────────────┤
+   1 │ 4 │ 5 │ 7 │ 6 │
+     └────────────────┘</code></pre>
+                    <p class="fragment">⚠️ Orden: <strong>00, 01, 11, 10</strong> (código Gray)</p>
+                </section>
+                <section>
+                    <h3>Sistema de Voto en Karnaugh</h3>
+                    <pre><code>         BC
+       00  01  11  10
+     ┌────┬────┬────┬────┐
+   0 │ 0 │ 0 │ 1 │ 0 │
+A    ├────┼────┼────┼────┤
+   1 │ 0 │ 1 │ 1 │ 1 │
+     └────┴────┴────┴────┘</code></pre>
+                </section>
+                <section>
+                    <h3>Agrupaciones</h3>
+                    <ul>
+                        <li class="fragment">Grupo 1 (vertical BC=11): <strong>BC</strong></li>
+                        <li class="fragment">Grupo 2 (horizontal A=1, C=1): <strong>AC</strong></li>
+                        <li class="fragment">Grupo 3 (horizontal A=1, B=1): <strong>AB</strong></li>
+                    </ul>
+                    <p class="fragment" style="font-size: 1.5em; margin-top: 20px;">\[F = AB + AC + BC\]</p>
+                </section>
+                <section>
+                    <h3>Reglas de Agrupación</h3>
+                    <ol style="font-size: 0.9em;">
+                        <li class="fragment">Solo agrupar <strong>1's</strong></li>
+                        <li class="fragment">Tamaño: potencias de 2 (1, 2, 4, 8...)</li>
+                        <li class="fragment">Forma: <strong>rectangular</strong></li>
+                        <li class="fragment">Los bordes <strong>conectan</strong></li>
+                        <li class="fragment">Grupos más grandes = más simple</li>
+                        <li class="fragment">Cubrir <strong>todos</strong> los 1's</li>
+                    </ol>
+                </section>
+            </section>
+
+            <!-- Karnaugh 4 variables -->
+            <section>
+                <h2>Karnaugh 4 Variables</h2>
+                <pre><code>          CD
+        00  01  11  10
+      ┌────────────────┐
+   00 │ 0 │ 1 │ 3 │ 2 │
+      ├────────────────┤
+   01 │ 4 │ 5 │ 7 │ 6 │
+AB    ├────────────────┤
+   11 │12 │13 │15 │14 │
+      ├────────────────┤
+   10 │ 8 │ 9 │11 │10 │
+      └────────────────┘</code></pre>
+                <p class="fragment">16 celdas (2⁴ combinaciones)</p>
+            </section>
+
+            <!-- Implementación -->
+            <section>
+                <h2>Implementación</h2>
+                <p>\[F = AB + AC + BC\]</p>
+                <p class="fragment">CIs necesarios:</p>
+                <ul class="fragment">
+                    <li>1x <strong>74LS08</strong> (puertas AND) - usamos 3</li>
+                    <li>1x <strong>74LS32</strong> (puertas OR) - usamos 2</li>
+                </ul>
+            </section>
+
+            <!-- Resumen -->
+            <section data-background-color="#1e3a8a">
+                <h2 style="color: white;">Resumen</h2>
+                <ul style="color: #dbeafe;">
+                    <li>Problema → Tabla → Expresión → Circuito</li>
+                    <li>Karnaugh: Simplificación visual</li>
+                    <li>Grupos de 1's en potencias de 2</li>
+                    <li>Menos puertas = circuito más eficiente</li>
+                </ul>
+            </section>
+
+            <!-- Siguiente tema -->
+            <section>
+                <h2>Próximo tema</h2>
+                <h3>Tema 6: Circuitos Combinacionales</h3>
+                <p>Codificadores, displays, multiplexores</p>
+            </section>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/plugin/notes/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/plugin/markdown/markdown.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/plugin/highlight/highlight.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/plugin/math/math.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            slideNumber: 'c/t',
+            plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ],
+            transition: 'slide',
+            backgroundTransition: 'fade'
+        });
+    </script>
+</body>
+</html>

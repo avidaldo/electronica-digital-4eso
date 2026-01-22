@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 1: Introducción a la Electrónica Digital</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/reset.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/theme/white.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/plugin/highlight/monokai.css">
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <!-- Portada -->
+            <section data-background-color="#1e3a8a">
+                <h1 style="color: white;">Electrónica Digital</h1>
+                <h2 style="color: #93c5fd;">Tema 1: Introducción</h2>
+                <p style="color: #dbeafe;">Tecnología 4º ESO</p>
+            </section>
+
+            <!-- Objetivos -->
+            <section>
+                <h2>🎯 Objetivos</h2>
+                <ul>
+                    <li class="fragment">Diferenciar señales analógicas y digitales</li>
+                    <li class="fragment">Explicar ventajas de los sistemas digitales</li>
+                    <li class="fragment">Identificar aplicaciones cotidianas</li>
+                    <li class="fragment">Conocer la evolución histórica</li>
+                </ul>
+            </section>
+
+            <!-- ¿Qué es? -->
+            <section>
+                <h2>¿Qué es la Electrónica Digital?</h2>
+                <p>Trabaja con señales que solo tienen <strong>dos valores</strong>:</p>
+                <div class="fragment" style="display: flex; justify-content: center; gap: 50px; margin-top: 30px;">
+                    <div style="background: #fee2e2; padding: 30px 50px; border-radius: 10px;">
+                        <h3>0</h3>
+                        <p>BAJO / OFF / FALSO</p>
+                    </div>
+                    <div style="background: #dcfce7; padding: 30px 50px; border-radius: 10px;">
+                        <h3>1</h3>
+                        <p>ALTO / ON / VERDADERO</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Analógico vs Digital -->
+            <section>
+                <section>
+                    <h2>Señales Analógicas vs Digitales</h2>
+                    <img src="../recursos/imagenes/señales_analogica_digital.png" alt="Comparación señales" style="max-height: 400px;">
+                </section>
+                <section>
+                    <h3>Comparación</h3>
+                    <table>
+                        <thead>
+                            <tr><th>Característica</th><th>Analógica</th><th>Digital</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Valores</td><td>Infinitos</td><td>Solo 0 y 1</td></tr>
+                            <tr><td>Ruido</td><td>Muy sensible</td><td>Resistente</td></tr>
+                            <tr><td>Ejemplo</td><td>Vinilo</td><td>CD/MP3</td></tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section>
+                    <h3>Resistencia al Ruido</h3>
+                    <img src="../recursos/imagenes/comparacion_ruido.png" alt="Ruido" style="max-height: 400px;">
+                    <p class="fragment">💡 Una señal digital degradada sigue siendo interpretable</p>
+                </section>
+            </section>
+
+            <!-- El Bit -->
+            <section>
+                <h2>El Bit: Unidad Básica</h2>
+                <p><strong>bit</strong> = binary digit = 0 ó 1</p>
+                <ul class="fragment">
+                    <li>1 byte = 8 bits</li>
+                    <li>1 KB = 1024 bytes</li>
+                    <li>Letra "A" en ASCII = <code>01000001</code></li>
+                </ul>
+            </section>
+
+            <!-- Ventajas -->
+            <section>
+                <h2>Ventajas de lo Digital</h2>
+                <ol>
+                    <li class="fragment">🛡️ <strong>Inmunidad al ruido</strong></li>
+                    <li class="fragment">💾 <strong>Almacenamiento sin degradación</strong></li>
+                    <li class="fragment">⚡ <strong>Procesamiento muy rápido</strong></li>
+                    <li class="fragment">🔄 <strong>Reproducibilidad perfecta</strong></li>
+                    <li class="fragment">📱 <strong>Miniaturización extrema</strong></li>
+                </ol>
+            </section>
+
+            <!-- Historia -->
+            <section>
+                <section>
+                    <h2>Evolución Histórica</h2>
+                </section>
+                <section>
+                    <h3>1947 - El Transistor</h3>
+                    <p>Bardeen, Brattain y Shockley</p>
+                    <p class="fragment">🏆 Premio Nobel de Física 1956</p>
+                    <p class="fragment">Sustituyó a los tubos de vacío</p>
+                </section>
+                <section>
+                    <h3>1958 - Circuito Integrado</h3>
+                    <p>Jack Kilby (Texas Instruments)</p>
+                    <p class="fragment">Varios transistores en un solo chip</p>
+                </section>
+                <section>
+                    <h3>1971 - Intel 4004</h3>
+                    <p>Primer microprocesador comercial</p>
+                    <p class="fragment"><strong>2.300 transistores</strong></p>
+                </section>
+                <section>
+                    <h3>2020 - Apple M1</h3>
+                    <p class="fragment"><strong>16.000.000.000 transistores</strong></p>
+                    <p class="fragment">¡7 millones de veces más que el 4004!</p>
+                </section>
+                <section>
+                    <h3>Ley de Moore</h3>
+                    <p>El número de transistores se <strong>duplica cada 18-24 meses</strong></p>
+                    <p class="fragment">Se ha cumplido durante más de 50 años</p>
+                </section>
+            </section>
+
+            <!-- Aplicaciones -->
+            <section>
+                <h2>Aplicaciones Cotidianas</h2>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div class="fragment">🏠 Electrodomésticos</div>
+                    <div class="fragment">📱 Smartphones</div>
+                    <div class="fragment">🚗 Automóviles</div>
+                    <div class="fragment">🎮 Consolas</div>
+                    <div class="fragment">🏥 Equipos médicos</div>
+                    <div class="fragment">🏭 Industria 4.0</div>
+                </div>
+            </section>
+
+            <!-- Sostenibilidad -->
+            <section>
+                <h2>♻️ Sostenibilidad</h2>
+                <div style="display: flex; gap: 30px;">
+                    <div class="fragment" style="flex: 1; background: #dcfce7; padding: 20px; border-radius: 10px;">
+                        <h4>✅ Positivo</h4>
+                        <ul>
+                            <li>Eficiencia energética</li>
+                            <li>Control inteligente</li>
+                        </ul>
+                    </div>
+                    <div class="fragment" style="flex: 1; background: #fee2e2; padding: 20px; border-radius: 10px;">
+                        <h4>❌ Negativo</h4>
+                        <ul>
+                            <li>Residuos electrónicos</li>
+                            <li>Obsolescencia</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Resumen -->
+            <section data-background-color="#1e3a8a">
+                <h2 style="color: white;">Resumen</h2>
+                <ul style="color: #dbeafe;">
+                    <li>Digital = 2 valores (0 y 1)</li>
+                    <li>Más resistente al ruido</li>
+                    <li>Transistor → CI → Microprocesador</li>
+                    <li>Está en todos nuestros dispositivos</li>
+                </ul>
+            </section>
+
+            <!-- Siguiente tema -->
+            <section>
+                <h2>Próximo tema</h2>
+                <h3>Tema 2: Sistemas de Numeración</h3>
+                <p>Binario y Hexadecimal</p>
+            </section>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/plugin/notes/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/plugin/markdown/markdown.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/plugin/highlight/highlight.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/plugin/math/math.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            slideNumber: 'c/t',
+            plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ],
+            transition: 'slide',
+            backgroundTransition: 'fade'
+        });
+    </script>
+</body>
+</html>

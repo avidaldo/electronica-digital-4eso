@@ -1,0 +1,102 @@
+/* Custom styles for Reveal.js presentations - Electrónica Digital 4º ESO */
+
+/* Tables */
+.reveal table {
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+.reveal table th,
+.reveal table td {
+    border: 1px solid #ccc;
+    padding: 8px 16px;
+    text-align: center;
+}
+
+.reveal table th {
+    background-color: #e2e8f0;
+    font-weight: bold;
+}
+
+/* Lists */
+.reveal ul,
+.reveal ol {
+    text-align: left;
+}
+
+.reveal li {
+    margin-bottom: 10px;
+}
+
+/* Code blocks */
+.reveal pre {
+    width: 100%;
+    font-size: 0.75em;
+    box-shadow: none;
+}
+
+.reveal code {
+    font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+}
+
+/* Fragments animation */
+.reveal .fragment {
+    transition: all 0.3s ease;
+}
+
+/* Progress bar */
+.reveal .progress {
+    height: 5px;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.reveal .progress span {
+    background: #2563eb;
+}
+
+/* Slide number */
+.reveal .slide-number {
+    color: #64748b;
+    font-size: 14px;
+}
+
+/* Links */
+.reveal a {
+    color: #2563eb;
+}
+
+.reveal a:hover {
+    color: #1d4ed8;
+}
+
+/* Headings */
+.reveal h1,
+.reveal h2,
+.reveal h3 {
+    color: #1e293b;
+    text-transform: none;
+}
+
+.reveal h1 {
+    font-size: 2.5em;
+}
+
+.reveal h2 {
+    font-size: 1.8em;
+}
+
+.reveal h3 {
+    font-size: 1.4em;
+}
+
+/* Math (KaTeX) */
+.reveal .katex {
+    font-size: 1.1em;
+}
+
+/* Print styles */
+@media print {
+    .reveal .slides section {
+        page-break-after: always;
+    }
+}

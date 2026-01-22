@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 6: Circuitos Combinacionales</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/reset.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/theme/white.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/plugin/highlight/monokai.css">
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <!-- Portada -->
+            <section data-background-color="#1e3a8a">
+                <h1 style="color: white;">Electrónica Digital</h1>
+                <h2 style="color: #93c5fd;">Tema 6: Circuitos Combinacionales</h2>
+                <p style="color: #dbeafe;">Tecnología 4º ESO</p>
+            </section>
+
+            <!-- Objetivos -->
+            <section>
+                <h2>🎯 Objetivos</h2>
+                <ul>
+                    <li class="fragment">Comprender circuitos combinacionales</li>
+                    <li class="fragment">Diseñar codificadores y decodificadores</li>
+                    <li class="fragment">Controlar displays de 7 segmentos</li>
+                    <li class="fragment">Utilizar multiplexores</li>
+                </ul>
+            </section>
+
+            <!-- ¿Qué es? -->
+            <section>
+                <h2>Circuito Combinacional</h2>
+                <p>Salida depende <strong>solo</strong> de las entradas actuales</p>
+                <p class="fragment">\[\text{Salida} = f(\text{Entradas})\]</p>
+                <p class="fragment">❌ Sin memoria</p>
+                <p class="fragment">❌ Sin realimentación</p>
+            </section>
+
+            <!-- Codificadores -->
+            <section>
+                <section>
+                    <h2>Codificadores</h2>
+                    <p>Convierte \(2^n\) entradas → \(n\) salidas binarias</p>
+                </section>
+                <section>
+                    <h3>Codificador 4 a 2</h3>
+                    <table>
+                        <tr><th>\(I_3\)</th><th>\(I_2\)</th><th>\(I_1\)</th><th>\(I_0\)</th><th>\(S_1\)</th><th>\(S_0\)</th></tr>
+                        <tr><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+                        <tr><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+                        <tr><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+                        <tr><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+                    </table>
+                    <p class="fragment">📌 Aplicación: Teclados matriciales</p>
+                </section>
+            </section>
+
+            <!-- Decodificadores -->
+            <section>
+                <section>
+                    <h2>Decodificadores</h2>
+                    <p>Operación <strong>inversa</strong>: \(n\) entradas → \(2^n\) salidas</p>
+                </section>
+                <section>
+                    <h3>Decodificador 2 a 4</h3>
+                    <table>
+                        <tr><th>A</th><th>B</th><th>\(S_0\)</th><th>\(S_1\)</th><th>\(S_2\)</th><th>\(S_3\)</th></tr>
+                        <tr><td>0</td><td>0</td><td style="background:#dcfce7">1</td><td>0</td><td>0</td><td>0</td></tr>
+                        <tr><td>0</td><td>1</td><td>0</td><td style="background:#dcfce7">1</td><td>0</td><td>0</td></tr>
+                        <tr><td>1</td><td>0</td><td>0</td><td>0</td><td style="background:#dcfce7">1</td><td>0</td></tr>
+                        <tr><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td style="background:#dcfce7">1</td></tr>
+                    </table>
+                    <p class="fragment">Solo <strong>una salida</strong> activa a la vez</p>
+                </section>
+            </section>
+
+            <!-- Display 7 segmentos -->
+            <section>
+                <section>
+                    <h2>Display de 7 Segmentos</h2>
+                    <pre style="font-size: 1.5em;"><code>     a
+   ┌───┐
+ f │   │ b
+   ├─g─┤
+ e │   │ c
+   └───┘
+     d</code></pre>
+                </section>
+                <section>
+                    <h3>Decodificador BCD a 7 seg</h3>
+                    <p>4 bits (0-9) → 7 señales (a-g)</p>
+                    <table style="font-size: 0.6em;">
+                        <tr><th>Dec</th><th>BCD</th><th>a</th><th>b</th><th>c</th><th>d</th><th>e</th><th>f</th><th>g</th></tr>
+                        <tr><td>0</td><td>0000</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+                        <tr><td>1</td><td>0001</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                        <tr><td>2</td><td>0010</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+                        <tr><td>...</td><td>...</td><td colspan="7">...</td></tr>
+                    </table>
+                    <p class="fragment">CI comercial: <strong>74LS47</strong></p>
+                </section>
+            </section>
+
+            <!-- Multiplexores -->
+            <section>
+                <section>
+                    <h2>Multiplexores (MUX)</h2>
+                    <p>Selecciona <strong>1 de N entradas</strong> hacia la salida</p>
+                    <p class="fragment">Como un interruptor rotativo</p>
+                </section>
+                <section>
+                    <h3>MUX 4 a 1</h3>
+                    <table>
+                        <tr><th>\(S_1\)</th><th>\(S_0\)</th><th>Y</th></tr>
+                        <tr><td>0</td><td>0</td><td>\(D_0\)</td></tr>
+                        <tr><td>0</td><td>1</td><td>\(D_1\)</td></tr>
+                        <tr><td>1</td><td>0</td><td>\(D_2\)</td></tr>
+                        <tr><td>1</td><td>1</td><td>\(D_3\)</td></tr>
+                    </table>
+                    <p class="fragment">CI comercial: <strong>74LS153</strong></p>
+                </section>
+                <section>
+                    <h3>Aplicaciones</h3>
+                    <ul>
+                        <li class="fragment">Transmisión de datos por 1 cable</li>
+                        <li class="fragment">Implementación de funciones lógicas</li>
+                        <li class="fragment">Selección de fuentes de señal</li>
+                    </ul>
+                </section>
+            </section>
+
+            <!-- Resumen -->
+            <section data-background-color="#1e3a8a">
+                <h2 style="color: white;">Resumen</h2>
+                <ul style="color: #dbeafe;">
+                    <li>Combinacional = sin memoria</li>
+                    <li>Codificador: N líneas → binario</li>
+                    <li>Decodificador: binario → N líneas</li>
+                    <li>Display 7 seg: CI 74LS47</li>
+                    <li>MUX: Selector de entradas</li>
+                </ul>
+            </section>
+
+            <!-- Siguiente tema -->
+            <section>
+                <h2>Próximo tema</h2>
+                <h3>Tema 7: Prácticas de Taller</h3>
+                <p>Montaje real de circuitos</p>
+            </section>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/plugin/notes/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/plugin/markdown/markdown.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/plugin/highlight/highlight.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/plugin/math/math.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            slideNumber: 'c/t',
+            plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ],
+            transition: 'slide',
+            backgroundTransition: 'fade'
+        });
+    </script>
+</body>
+</html>

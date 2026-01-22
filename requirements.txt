@@ -1,0 +1,8 @@
+# Python dependencies for Electrónica Digital 4º ESO
+# Used for generating figures and building PDF
+
+# For figure generation (recursos/generar_figuras.py)
+matplotlib>=3.8.0
+numpy>=1.24.0
+
+# For PDF generation script (optional, no additional deps needed beyond standard library)

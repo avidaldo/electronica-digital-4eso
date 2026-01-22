@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 3: Álgebra de Boole</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/reset.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/theme/white.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/plugin/highlight/monokai.css">
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <!-- Portada -->
+            <section data-background-color="#1e3a8a">
+                <h1 style="color: white;">Electrónica Digital</h1>
+                <h2 style="color: #93c5fd;">Tema 3: Álgebra de Boole</h2>
+                <p style="color: #dbeafe;">Tecnología 4º ESO</p>
+            </section>
+
+            <!-- Objetivos -->
+            <section>
+                <h2>🎯 Objetivos</h2>
+                <ul>
+                    <li class="fragment">Comprender el álgebra de Boole</li>
+                    <li class="fragment">Aplicar operaciones AND, OR, NOT</li>
+                    <li class="fragment">Utilizar las leyes fundamentales</li>
+                    <li class="fragment">Aplicar los teoremas de De Morgan</li>
+                </ul>
+            </section>
+
+            <!-- Introducción -->
+            <section>
+                <h2>¿Qué es el Álgebra de Boole?</h2>
+                <p>Sistema matemático creado por <strong>George Boole</strong> (1854)</p>
+                <p class="fragment">Variables con solo <strong>2 valores</strong>:</p>
+                <div class="fragment" style="display: flex; justify-content: center; gap: 30px; margin-top: 20px;">
+                    <div style="background: #fee2e2; padding: 20px 40px; border-radius: 10px;">FALSO / 0</div>
+                    <div style="background: #dcfce7; padding: 20px 40px; border-radius: 10px;">VERDAD / 1</div>
+                </div>
+            </section>
+
+            <!-- NOT -->
+            <section>
+                <section>
+                    <h2>Operación NOT (Negación)</h2>
+                    <p>Símbolo: \(\overline{A}\) o \(A'\)</p>
+                    <p class="fragment"><strong>Invierte</strong> el valor de entrada</p>
+                </section>
+                <section>
+                    <h3>Tabla de Verdad</h3>
+                    <table>
+                        <tr><th>\(A\)</th><th>\(\overline{A}\)</th></tr>
+                        <tr><td>0</td><td style="background: #dcfce7;">1</td></tr>
+                        <tr><td>1</td><td style="background: #fee2e2;">0</td></tr>
+                    </table>
+                </section>
+            </section>
+
+            <!-- AND -->
+            <section>
+                <section>
+                    <h2>Operación AND (Producto)</h2>
+                    <p>Símbolo: \(A \cdot B\)</p>
+                    <p class="fragment">Salida = 1 <strong>solo si TODAS</strong> las entradas = 1</p>
+                </section>
+                <section>
+                    <h3>Tabla de Verdad</h3>
+                    <table>
+                        <tr><th>\(A\)</th><th>\(B\)</th><th>\(A \cdot B\)</th></tr>
+                        <tr><td>0</td><td>0</td><td>0</td></tr>
+                        <tr><td>0</td><td>1</td><td>0</td></tr>
+                        <tr><td>1</td><td>0</td><td>0</td></tr>
+                        <tr><td>1</td><td>1</td><td style="background: #dcfce7;">1</td></tr>
+                    </table>
+                </section>
+                <section>
+                    <h3>Analogía Eléctrica</h3>
+                    <pre><code>─[A]─[B]─ → Solo pasa corriente si A Y B están cerrados</code></pre>
+                    <p>Interruptores en <strong>SERIE</strong></p>
+                </section>
+            </section>
+
+            <!-- OR -->
+            <section>
+                <section>
+                    <h2>Operación OR (Suma)</h2>
+                    <p>Símbolo: \(A + B\)</p>
+                    <p class="fragment">Salida = 1 si <strong>AL MENOS UNA</strong> entrada = 1</p>
+                </section>
+                <section>
+                    <h3>Tabla de Verdad</h3>
+                    <table>
+                        <tr><th>\(A\)</th><th>\(B\)</th><th>\(A + B\)</th></tr>
+                        <tr><td>0</td><td>0</td><td>0</td></tr>
+                        <tr><td>0</td><td>1</td><td style="background: #dcfce7;">1</td></tr>
+                        <tr><td>1</td><td>0</td><td style="background: #dcfce7;">1</td></tr>
+                        <tr><td>1</td><td>1</td><td style="background: #dcfce7;">1</td></tr>
+                    </table>
+                </section>
+                <section>
+                    <h3>Analogía Eléctrica</h3>
+                    <pre><code>    ┌─[A]─┐
+ ───┤     ├─── → Pasa corriente si A O B están cerrados
+    └─[B]─┘</code></pre>
+                    <p>Interruptores en <strong>PARALELO</strong></p>
+                </section>
+            </section>
+
+            <!-- Propiedades -->
+            <section>
+                <h2>Propiedades Fundamentales</h2>
+                <table style="font-size: 0.8em;">
+                    <tr><th>Propiedad</th><th>AND</th><th>OR</th></tr>
+                    <tr><td>Identidad</td><td>\(A \cdot 1 = A\)</td><td>\(A + 0 = A\)</td></tr>
+                    <tr><td>Dominante</td><td>\(A \cdot 0 = 0\)</td><td>\(A + 1 = 1\)</td></tr>
+                    <tr><td>Idempotencia</td><td>\(A \cdot A = A\)</td><td>\(A + A = A\)</td></tr>
+                    <tr><td>Complemento</td><td>\(A \cdot \overline{A} = 0\)</td><td>\(A + \overline{A} = 1\)</td></tr>
+                </table>
+            </section>
+
+            <!-- De Morgan -->
+            <section>
+                <section>
+                    <h2>Teoremas de De Morgan</h2>
+                    <p>🔑 <strong>Fundamentales</strong> para simplificar circuitos</p>
+                </section>
+                <section>
+                    <h3>Primer Teorema</h3>
+                    <p>\[\overline{A \cdot B} = \overline{A} + \overline{B}\]</p>
+                    <p class="fragment">"La negación de un producto = suma de negaciones"</p>
+                </section>
+                <section>
+                    <h3>Segundo Teorema</h3>
+                    <p>\[\overline{A + B} = \overline{A} \cdot \overline{B}\]</p>
+                    <p class="fragment">"La negación de una suma = producto de negaciones"</p>
+                </section>
+            </section>
+
+            <!-- Ejemplo Práctico -->
+            <section>
+                <h2>Ejemplo: Sistema de Seguridad</h2>
+                <p>La puerta se abre si:</p>
+                <ul>
+                    <li class="fragment">Tarjeta válida (A=1) <strong>Y</strong> PIN correcto (B=1)</li>
+                    <li class="fragment"><strong>O</strong> hay emergencia (C=1)</li>
+                </ul>
+                <p class="fragment" style="font-size: 1.5em; margin-top: 30px;">
+                    \[F = A \cdot B + C\]
+                </p>
+            </section>
+
+            <!-- Resumen -->
+            <section data-background-color="#1e3a8a">
+                <h2 style="color: white;">Resumen</h2>
+                <ul style="color: #dbeafe;">
+                    <li>NOT: Invierte (0→1, 1→0)</li>
+                    <li>AND: Todas a 1 → 1</li>
+                    <li>OR: Al menos una a 1 → 1</li>
+                    <li>De Morgan: Convierte AND↔OR</li>
+                </ul>
+            </section>
+
+            <!-- Siguiente tema -->
+            <section>
+                <h2>Próximo tema</h2>
+                <h3>Tema 4: Puertas Lógicas</h3>
+                <p>Circuitos que implementan estas operaciones</p>
+            </section>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/plugin/notes/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/plugin/markdown/markdown.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/plugin/highlight/highlight.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/plugin/math/math.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            slideNumber: 'c/t',
+            plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ],
+            transition: 'slide',
+            backgroundTransition: 'fade'
+        });
+    </script>
+</body>
+</html>

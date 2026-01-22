@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 7: Prácticas de Taller</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/reset.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/theme/white.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/plugin/highlight/monokai.css">
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <!-- Portada -->
+            <section data-background-color="#1e3a8a">
+                <h1 style="color: white;">Electrónica Digital</h1>
+                <h2 style="color: #93c5fd;">Tema 7: Prácticas de Taller</h2>
+                <p style="color: #dbeafe;">Tecnología 4º ESO</p>
+            </section>
+
+            <!-- Objetivos -->
+            <section>
+                <h2>🎯 Objetivos</h2>
+                <ul>
+                    <li class="fragment">Usar correctamente la protoboard</li>
+                    <li class="fragment">Identificar y manejar CIs digitales</li>
+                    <li class="fragment">Montar circuitos lógicos</li>
+                    <li class="fragment">Usar simuladores</li>
+                    <li class="fragment">Diagnosticar fallos</li>
+                </ul>
+            </section>
+
+            <!-- Protoboard -->
+            <section>
+                <section>
+                    <h2>La Protoboard</h2>
+                    <p>Placa de prototipado <strong>sin soldadura</strong></p>
+                </section>
+                <section>
+                    <h3>Estructura</h3>
+                    <pre><code>  + + + + + + + + +  ← VCC (rojo)
+  - - - - - - - - -  ← GND (negro)
+  ─────────────────
+  a b c d e ║ f g h i j
+  ○ ○ ○ ○ ○ ║ ○ ○ ○ ○ ○  1
+  ○ ○ ○ ○ ○ ║ ○ ○ ○ ○ ○  2
+     ...    ║    ...
+  ○ ○ ○ ○ ○ ║ ○ ○ ○ ○ ○  30</code></pre>
+                </section>
+                <section>
+                    <h3>Conexiones Internas</h3>
+                    <ul>
+                        <li class="fragment"><strong>Buses laterales:</strong> Horizontales (toda la fila)</li>
+                        <li class="fragment"><strong>Filas centrales:</strong> Verticales (a-e juntos, f-j juntos)</li>
+                        <li class="fragment"><strong>Canal central:</strong> Para insertar CIs</li>
+                    </ul>
+                </section>
+            </section>
+
+            <!-- Reglas -->
+            <section>
+                <h2>Reglas de Uso</h2>
+                <div style="display: flex; gap: 30px;">
+                    <div class="fragment" style="flex: 1; background: #dcfce7; padding: 20px; border-radius: 10px;">
+                        <h4>✅ Hacer</h4>
+                        <ul style="font-size: 0.8em;">
+                            <li>Insertar con cuidado</li>
+                            <li>Usar colores de cables</li>
+                            <li>Mantener ordenado</li>
+                        </ul>
+                    </div>
+                    <div class="fragment" style="flex: 1; background: #fee2e2; padding: 20px; border-radius: 10px;">
+                        <h4>❌ NO hacer</h4>
+                        <ul style="font-size: 0.8em;">
+                            <li>Conectar con tensión</li>
+                            <li>Forzar componentes</li>
+                            <li>Crear cortocircuitos</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CIs -->
+            <section>
+                <section>
+                    <h2>Circuitos Integrados</h2>
+                    <pre><code>    74LS08N
+    ────────
+    │o      │  ← Muesca (pin 1)
+    │1    14│
+    │2    13│
+    │...    │
+    │7     8│
+    └───────┘</code></pre>
+                </section>
+                <section>
+                    <h3>Nomenclatura</h3>
+                    <p><strong>74LS08</strong></p>
+                    <ul>
+                        <li class="fragment"><strong>74:</strong> Familia TTL</li>
+                        <li class="fragment"><strong>LS:</strong> Low-power Schottky</li>
+                        <li class="fragment"><strong>08:</strong> 4 puertas AND</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>⚠️ Recuerda</h3>
+                    <ul>
+                        <li><strong>Pin 14 = VCC (+5V)</strong></li>
+                        <li><strong>Pin 7 = GND (0V)</strong></li>
+                        <li>Siempre alimentar primero</li>
+                    </ul>
+                </section>
+            </section>
+
+            <!-- Práctica AND -->
+            <section>
+                <section>
+                    <h2>Práctica: Puerta AND</h2>
+                    <h3>Componentes</h3>
+                    <ul style="font-size: 0.8em;">
+                        <li>1x CI 7408</li>
+                        <li>2x Interruptores</li>
+                        <li>1x LED + Resistencia 330Ω</li>
+                        <li>2x Resistencias 10kΩ (pull-down)</li>
+                        <li>Fuente 5V</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Verificación</h3>
+                    <table>
+                        <tr><th>A</th><th>B</th><th>LED</th></tr>
+                        <tr><td>0</td><td>0</td><td>❌ Apagado</td></tr>
+                        <tr><td>0</td><td>1</td><td>❌ Apagado</td></tr>
+                        <tr><td>1</td><td>0</td><td>❌ Apagado</td></tr>
+                        <tr><td>1</td><td>1</td><td style="background: #dcfce7;">✅ Encendido</td></tr>
+                    </table>
+                </section>
+            </section>
+
+            <!-- Simuladores -->
+            <section>
+                <h2>Simuladores Online</h2>
+                <div style="display: flex; gap: 30px;">
+                    <div class="fragment" style="flex: 1; background: #dbeafe; padding: 20px; border-radius: 10px;">
+                        <h4>Tinkercad</h4>
+                        <p style="font-size: 0.8em;">tinkercad.com/circuits</p>
+                        <ul style="font-size: 0.7em;">
+                            <li>Componentes reales</li>
+                            <li>Protoboard virtual</li>
+                            <li>Arduino compatible</li>
+                        </ul>
+                    </div>
+                    <div class="fragment" style="flex: 1; background: #dbeafe; padding: 20px; border-radius: 10px;">
+                        <h4>Falstad</h4>
+                        <p style="font-size: 0.8em;">falstad.com/circuit</p>
+                        <ul style="font-size: 0.7em;">
+                            <li>Muy visual</li>
+                            <li>Flujo de corriente</li>
+                            <li>Sin registro</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Fallos comunes -->
+            <section>
+                <h2>Diagnóstico de Fallos</h2>
+                <table style="font-size: 0.7em;">
+                    <tr><th>Síntoma</th><th>Causa</th><th>Solución</th></tr>
+                    <tr><td>Nada funciona</td><td>Sin alimentación</td><td>Revisar VCC/GND</td></tr>
+                    <tr><td>LED siempre ON</td><td>Cortocircuito</td><td>Revisar conexiones</td></tr>
+                    <tr><td>LED siempre OFF</td><td>LED invertido</td><td>Girar LED</td></tr>
+                    <tr><td>Comportamiento raro</td><td>Entradas flotantes</td><td>Añadir pull-down</td></tr>
+                </table>
+            </section>
+
+            <!-- Seguridad -->
+            <section data-background-color="#dc2626">
+                <h2 style="color: white;">⚠️ Seguridad</h2>
+                <ol style="color: white;">
+                    <li class="fragment">Trabajar SIN tensión</li>
+                    <li class="fragment">Nunca superar 5V</li>
+                    <li class="fragment">Descargar estática antes</li>
+                    <li class="fragment">No comer ni beber</li>
+                    <li class="fragment">Informar de averías</li>
+                </ol>
+            </section>
+
+            <!-- Resumen -->
+            <section data-background-color="#1e3a8a">
+                <h2 style="color: white;">Resumen</h2>
+                <ul style="color: #dbeafe;">
+                    <li>Protoboard: Sin soldadura, filas conectadas</li>
+                    <li>CIs: Pin 14=VCC, Pin 7=GND</li>
+                    <li>Simuladores: Tinkercad, Falstad</li>
+                    <li>Diagnóstico: Revisar alimentación primero</li>
+                </ul>
+            </section>
+
+            <!-- Final -->
+            <section>
+                <h2>🎉 ¡Fin de la Unidad!</h2>
+                <p>Has aprendido:</p>
+                <ul style="font-size: 0.8em;">
+                    <li>Sistemas de numeración binario y hexadecimal</li>
+                    <li>Álgebra de Boole y puertas lógicas</li>
+                    <li>Diseño y simplificación de circuitos</li>
+                    <li>Circuitos combinacionales</li>
+                    <li>Montaje práctico en taller</li>
+                </ul>
+                <p class="fragment" style="margin-top: 30px; font-size: 1.2em;">¡A por la práctica! 🔧</p>
+            </section>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/plugin/notes/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/plugin/markdown/markdown.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/plugin/highlight/highlight.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/plugin/math/math.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            slideNumber: 'c/t',
+            plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ],
+            transition: 'slide',
+            backgroundTransition: 'fade'
+        });
+    </script>
+</body>
+</html>
