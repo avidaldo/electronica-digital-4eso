@@ -12,13 +12,13 @@ Presentaciones interactivas en formato Reveal.js para cada tema de la unidad.
 
 | Tema | Descripción | Enlace |
 |------|-------------|--------|
-| **Tema 1** | Introducción a la Electrónica Digital | [Ver presentación](/presentacion/tema1.html) |
-| **Tema 2** | Sistemas de Numeración | [Ver presentación](/presentacion/tema2.html) |
-| **Tema 3** | Álgebra de Boole | [Ver presentación](/presentacion/tema3.html) |
-| **Tema 4** | Puertas Lógicas | [Ver presentación](/presentacion/tema4.html) |
-| **Tema 5** | Análisis y Diseño de Circuitos | [Ver presentación](/presentacion/tema5.html) |
-| **Tema 6** | Circuitos Combinacionales | [Ver presentación](/presentacion/tema6.html) |
-| **Tema 7** | Prácticas de Taller | [Ver presentación](/presentacion/tema7.html) |
+| **Tema 1** | Introducción a la Electrónica Digital | [Ver presentación](pathname:///presentacion/tema1.html) |
+| **Tema 2** | Sistemas de Numeración | [Ver presentación](pathname:///presentacion/tema2.html) |
+| **Tema 3** | Álgebra de Boole | [Ver presentación](pathname:///presentacion/tema3.html) |
+| **Tema 4** | Puertas Lógicas | [Ver presentación](pathname:///presentacion/tema4.html) |
+| **Tema 5** | Análisis y Diseño de Circuitos | [Ver presentación](pathname:///presentacion/tema5.html) |
+| **Tema 6** | Circuitos Combinacionales | [Ver presentación](pathname:///presentacion/tema6.html) |
+| **Tema 7** | Prácticas de Taller | [Ver presentación](pathname:///presentacion/tema7.html) |
 
 ---
 
