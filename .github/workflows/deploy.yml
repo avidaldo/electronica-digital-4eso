@@ -44,60 +44,7 @@ jobs:
           name: generated-figures
           path: recursos/imagenes/
 
-  # Job 2: Build PDF with Pandoc
-  build-pdf:
-    runs-on: ubuntu-latest
-    needs: generate-figures
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Download figures
-        uses: actions/download-artifact@v4
-        with:
-          name: generated-figures
-          path: recursos/imagenes/
-
-      - name: Setup Pandoc
-        uses: pandoc/actions/setup@v1
-        with:
-          version: 3.1.9
-
-      - name: Setup TeX Live
-        uses: teatimeguest/setup-texlive-action@v3
-        with:
-          packages: |
-            scheme-basic
-            latex-bin
-            xetex
-            fancyhdr
-            geometry
-            tcolorbox
-            pgf
-            environ
-            trimspaces
-            etoolbox
-            xcolor
-            babel-spanish
-            hyphen-spanish
-
-      - name: Setup Python for build script
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-
-      - name: Build PDF
-        run: python scripts/build-pdf.py --output apuntes_electronica_digital.pdf
-        continue-on-error: true
-
-      - name: Upload PDF artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: apuntes-pdf
-          path: dist/apuntes_electronica_digital.pdf
-        if: success()
-
-  # Job 3: Build Docusaurus
+  # Job 2: Build Docusaurus
   build-docusaurus:
     runs-on: ubuntu-latest
     needs: generate-figures
@@ -140,7 +87,7 @@ jobs:
         with:
           path: build
 
-  # Job 4: Deploy to GitHub Pages
+  # Job 3: Deploy to GitHub Pages
   deploy:
     environment:
       name: github-pages
