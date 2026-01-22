@@ -18,7 +18,7 @@ Materiales didácticos para la Unidad Didáctica de **Electrónica Digital** de 
 
 La documentación se despliega automáticamente en GitHub Pages:
 
-**🔗 [https://tu-usuario.github.io/electronica-digital-4eso/](https://tu-usuario.github.io/electronica-digital-4eso/)**
+**🔗 [https://avidaldo.github.io/electronica-digital-4eso/](https://avidaldo.github.io/electronica-digital-4eso/)**
 
 ## 🎬 Presentaciones
 
@@ -46,7 +46,7 @@ Las presentaciones interactivas en Reveal.js están disponibles en la carpeta `p
 
 ```bash
 # Clonar el repositorio
-git clone https://github.com/tu-usuario/electronica-digital-4eso.git
+git clone https://github.com/avidaldo/electronica-digital-4eso.git
 cd electronica-digital-4eso
 
 # Instalar dependencias Node.js

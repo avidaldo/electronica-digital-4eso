@@ -13,12 +13,12 @@ const config = {
 
   // Set the production url of your site here
   // Cambiar por tu usuario de GitHub
-  url: 'https://tu-usuario.github.io',
+  url: 'https://avidaldo.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   baseUrl: '/electronica-digital-4eso/',
 
   // GitHub pages deployment config
-  organizationName: 'tu-usuario', // Cambiar por tu usuario de GitHub
+  organizationName: 'avidaldo', // Cambiar por tu usuario de GitHub
   projectName: 'electronica-digital-4eso', // Nombre del repositorio
   trailingSlash: false,
 
