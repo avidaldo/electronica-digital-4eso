@@ -15,42 +15,42 @@ Estos apuntes desarrollan los contenidos de la unidad de Electrónica Digital se
 
 ## 📚 Índice de Temas
 
-1. [Introducción a la Electrónica Digital](apuntes/01_introduccion)
+1. [Introducción a la Electrónica Digital](apuntes/introduccion)
    - Historia y evolución
    - Señales analógicas vs digitales
    - Aplicaciones cotidianas
 
-2. [Sistemas de Numeración](apuntes/02_sistemas_numeracion)
+2. [Sistemas de Numeración](apuntes/sistemas_numeracion)
    - Sistema decimal
    - Sistema binario
    - Sistema hexadecimal
    - Conversiones entre bases
 
-3. [Álgebra de Boole](apuntes/03_algebra_boole)
+3. [Álgebra de Boole](apuntes/algebra_boole)
    - Variables lógicas
    - Operaciones básicas (suma, producto, negación)
    - Propiedades y leyes fundamentales
    - Teoremas de De Morgan
 
-4. [Puertas Lógicas](apuntes/04_puertas_logicas)
+4. [Puertas Lógicas](apuntes/puertas_logicas)
    - Puertas básicas: AND, OR, NOT
    - Puertas universales: NAND, NOR
    - Puerta XOR (O-exclusiva)
    - Simbología y tablas de verdad
 
-5. [Análisis y Diseño de Circuitos Lógicos](apuntes/05_diseno_circuitos)
+5. [Análisis y Diseño de Circuitos Lógicos](apuntes/diseno_circuitos)
    - Obtención de tablas de verdad
    - Expresiones booleanas
    - Simplificación (introducción a Karnaugh)
    - Implementación con puertas
 
-6. [Circuitos Combinacionales](apuntes/06_circuitos_combinacionales)
+6. [Circuitos Combinacionales](apuntes/circuitos_combinacionales)
    - Codificadores y decodificadores
    - Display de 7 segmentos
    - Multiplexores y demultiplexores
    - Aplicaciones prácticas
 
-7. [Prácticas de Taller](apuntes/07_practicas_taller)
+7. [Prácticas de Taller](apuntes/practicas_taller)
    - Uso de la protoboard
    - Componentes: CIs TTL/CMOS
    - Simuladores (Tinkercad, Falstad)
@@ -60,10 +60,10 @@ Estos apuntes desarrollan los contenidos de la unidad de Electrónica Digital se
 
 ## 🎯 Competencias y Saberes
 
-Consulta la sección de legislación para ver:
-- [Competencias específicas](legislacion/02_competencias)
-- [Saberes básicos](legislacion/03_saberes_basicos)
-- [Criterios de evaluación](legislacion/04_evaluacion)
+Esta unidad desarrolla:
+- Competencias específicas según el Decreto 156/2022
+- Saberes básicos de sistemas digitales y lógica combinacional
+- Criterios de evaluación por competencias
 
 ---
 

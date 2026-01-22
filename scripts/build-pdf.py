@@ -121,7 +121,6 @@ header-includes:
   - \\fancyhead[R]{{4º ESO}}
   - \\fancyfoot[C]{{\\thepage}}
   - \\usepackage{{tcolorbox}}
-  - \\usepackage{{emoji}}
 ---
 
 """
